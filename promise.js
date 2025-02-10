@@ -1,4 +1,4 @@
-export const fetchWithPromise = (url) => {
+export const fetchWithPromise = (url) => { // function that takes in the url as the parameter
     return new Promise((resolve, reject) => {
         fetch(url)
         .then(res => {
@@ -7,11 +7,11 @@ export const fetchWithPromise = (url) => {
             }
             return res.json();
         })
-        .then(data => {
-            resolve(data.slice(0,5));
+        .then(data => { 
+            resolve(data.slice(0,5)); // the resolve returns the first five records in the fetched data
         })
         .catch(error => {
-            reject(error);
+            reject(error); // reject returns an error when something goes wrong
         })
     })
 }

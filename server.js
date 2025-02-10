@@ -6,28 +6,28 @@ import { fetchWithPromise } from "./promise.js";
 const app = express();
 
 
-const port = 3000;
+const port = 3000; // The port our server runs on
 
-const JSONurl = 'https://jsonplaceholder.typicode.com/comments'
+const JSONurl = 'https://jsonplaceholder.typicode.com/posts' // the url where we are fetching data
 
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}`);
 
     //Using callback
-    fetchWithCallback(JSONurl, (error, data) => {
+    fetchWithCallback(JSONurl, (error, data) => { //calling the callback method
         if(error){
             console.log('Callback Error:', error);
         }
         else{
-            console.log('Fetching Using Callback:', data, "\n");
+            console.log('Fetching user posts Using Callback:', data, "\n");
         }
     })
     console.log("\n")
 
     //Using Promises
-    fetchWithPromise(JSONurl)
+    fetchWithPromise(JSONurl) // calling the promise method
     .then(data => {
-        console.log('Fetching Using Promise:', data,"\n");
+        console.log('Fetching user posts Using Promise:', data,"\n");
     })
     .catch(error => {
         console.log('Promise Error:', error);
@@ -35,9 +35,9 @@ app.listen(port, () =>{
 
     console.log("\n")
 
-    fetchWithAsyncAwait(JSONurl)
+    fetchWithAsyncAwait(JSONurl) //calling the async and await method
     .then(data => {
-        console.log('Fetching Using Async Await:', data,"\n");
+        console.log('Fetching user posts Using Async Await:', data,"\n");
     })
     .catch(error => {
         console.log('Async Await Error:', error);
