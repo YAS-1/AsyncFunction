@@ -8,7 +8,7 @@ export const fetchWithPromise = (url) => { // function that takes in the url as 
             return res.json();
         })
         .then(data => { 
-            resolve(data.slice(0,5)); // the resolve returns the first five records in the fetched data
+            resolve(data); // the resolve returns the first five records in the fetched data
         })
         .catch(error => {
             reject(error); // reject returns an error when something goes wrong

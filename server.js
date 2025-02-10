@@ -8,7 +8,7 @@ const app = express();
 
 const port = 3000; // The port our server runs on
 
-const JSONurl = 'https://jsonplaceholder.typicode.com/posts' // the url where we are fetching data
+const JSONurl = 'https://reqres.in/api/users?page=2' // the url where we are fetching data
 
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}`);
@@ -19,7 +19,7 @@ app.listen(port, () =>{
             console.log('Callback Error:', error);
         }
         else{
-            console.log('Fetching user posts Using Callback:', data, "\n");
+            console.log('Fetching users Using Callback:', data, "\n\n");
         }
     })
     console.log("\n")
@@ -27,7 +27,7 @@ app.listen(port, () =>{
     //Using Promises
     fetchWithPromise(JSONurl) // calling the promise method
     .then(data => {
-        console.log('Fetching user posts Using Promise:', data,"\n");
+        console.log('Fetching users Using Promise:', data,"\n\n");
     })
     .catch(error => {
         console.log('Promise Error:', error);
@@ -37,7 +37,7 @@ app.listen(port, () =>{
 
     fetchWithAsyncAwait(JSONurl) //calling the async and await method
     .then(data => {
-        console.log('Fetching user posts Using Async Await:', data,"\n");
+        console.log('Fetching users Using Async Await:', data,"\n\n");
     })
     .catch(error => {
         console.log('Async Await Error:', error);

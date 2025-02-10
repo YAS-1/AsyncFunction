@@ -7,7 +7,7 @@ export const fetchWithAsyncAwait = async (url) => { // async function that takes
             throw new Error(`Error! Status: ${res.status}`);
         }
         const data = await res.json();
-        return data.slice(0,5);
+        return data;
     }
     catch (error){ 
         throw new Error(error);

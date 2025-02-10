@@ -7,6 +7,6 @@ export const fetchWithCallback = (url, callback) =>{ // function that takes in 2
         }
         return res.json();
     })
-    .then(data => callback(null, data.slice(0,5)))
+    .then(data => callback(null, data))
     .catch(error => callback(error, null));
 }
